@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.InteropServices;
 
 
 namespace CforBeginners
@@ -53,11 +54,33 @@ namespace CforBeginners
         static void thirdTask()
         {
             Console.WriteLine("third task");
+            var random = new Random();
+
+            for (int i = 0; i < 1000; i++)
+            {
+                
+                Console.WriteLine(random.Next());
+            }
+
         }
 
         static void fourthTask()
         {
             Console.WriteLine("fourth task");
+
+            var input = "";
+
+            while (true)
+            {
+                Console.WriteLine("Enter a name");
+                input = Console.ReadLine();
+
+                if (String.IsNullOrWhiteSpace(input))
+                    break;
+
+                Console.WriteLine("Echo: {0}",input);
+
+            }
         }
 
         static void fifthTask()
