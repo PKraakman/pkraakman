@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.Runtime.InteropServices;
 
 
@@ -87,29 +89,32 @@ namespace CforBeginners
         {
             Console.WriteLine("fifth task");
 
-            Console.WriteLine("Enter a list of numbers");
+            var friends = new List<string>();
 
-            string[] numbers;
-            string input;
-            int highest;
-            int nextNumber;
-            
 
-            input = Console.ReadLine();
-
-            numbers = input.Split(',');
-
-            highest = Convert.ToInt32(numbers[0]);
-
-            foreach (var number in numbers)
+            while (true)
             {
-                nextNumber = Convert.ToInt32(number);
+                Console.WriteLine("Enter a name:");
+                var name = Console.ReadLine();
+                if (String.IsNullOrWhiteSpace(name))
+                    break;
 
-                if (nextNumber > highest)
-                    highest = nextNumber;
+                friends.Add(name);
             }
 
-            Console.WriteLine(highest);
+            if (friends.Count == 1)
+                Console.WriteLine(friends[0] + " likes you");
+            else if (friends.Count == 2)
+                Console.WriteLine(friends[0] + " and " + friends[1] + " Like your post") ;
+            else if (friends.Count > 2)
+                Console.WriteLine(friends[0] + " and " + friends[1] + " and " + (friends.Count - 2) + " more Like your post") ;
+
+
+            Console.WriteLine();
+            
+                
+
         }
+
     }
 }
