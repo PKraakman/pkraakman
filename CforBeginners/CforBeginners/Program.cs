@@ -86,6 +86,30 @@ namespace CforBeginners
         static void fifthTask()
         {
             Console.WriteLine("fifth task");
+
+            Console.WriteLine("Enter a list of numbers");
+
+            string[] numbers;
+            string input;
+            int highest;
+            int nextNumber;
+            
+
+            input = Console.ReadLine();
+
+            numbers = input.Split(',');
+
+            highest = Convert.ToInt32(numbers[0]);
+
+            foreach (var number in numbers)
+            {
+                nextNumber = Convert.ToInt32(number);
+
+                if (nextNumber > highest)
+                    highest = nextNumber;
+            }
+
+            Console.WriteLine(highest);
         }
     }
 }
