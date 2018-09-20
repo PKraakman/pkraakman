@@ -15,14 +15,15 @@ namespace CforBeginners
             var path = @"C:\ccode\testdata\testfile1.txt";
             var mytext = File.ReadAllText(path);
 
-            var mywords = mytext.Split(' ');
+            string[] MyWords;
+            MyWords = mytext.Split(' ');
 
             Console.WriteLine(mytext);
-            Console.WriteLine("number of words: " + mywords.Length);
+            Console.WriteLine("number of words: " + MyWords.Length);
 
             var longestWord = "";
 
-            foreach(var word in mywords)
+            foreach(var word in MyWords)
             {
                 if (word.Length > longestWord.Length)
                     longestWord = word;
